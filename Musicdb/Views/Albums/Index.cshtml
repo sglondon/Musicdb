@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Musicdb.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Albums</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    @foreach (var item in Model)
+
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>@Html.DisplayFor(modelItem => item.Artist.ArtistName)</h3>
+                    <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+
+                    <p><img id="albumimage" src="@Html.DisplayFor(modelItem => item.AlbumPhoto)" /></p>
+                </div>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AlbumID })
+                @Html.ActionLink("Details", "Details", new { id = item.AlbumID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.AlbumID })
+
+            </div>
+        </div>
+    }
+</div>
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleasedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumPhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist.ArtistName)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleasedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genere)
+            </td>
+            <td>
+
+               <img id="albumimage" src="@Html.DisplayFor(modelItem => item.AlbumPhoto)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.AlbumID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AlbumID })
+            </td>
+        </tr>
+    }
+
+    </table>*@

@@ -1,0 +1,87 @@
+﻿@model Musicdb.Models.Album
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Album Details</h2>
+
+<div>
+
+    <div class="card border-primary mb-3" style="w-75">
+
+        <div class="card-header">Album Name: @Html.DisplayFor(model => model.Title)</div>
+        <div class="card-body text-primary">
+            @*<h3 class="card-title">@Html.DisplayFor(model => model.Title)</h3>*@
+            <p>@Html.DisplayFor(model => model.Artist.ArtistName)</p>
+
+            <p class="card-text"><img src="@Html.DisplayFor(model => model.AlbumPhoto)" /></p>
+
+            <p>@Html.DisplayNameFor(model => model.Genere): @Html.DisplayFor(model => model.Genere)</p>
+
+            <div class="card-footer">
+                <med class="text-muted">Date Released:  @Html.DisplayFor(model => model.ReleasedDate)</med>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@Html.ActionLink("Back to List", "Index")
+
+
+
+
+
+
+
+
+@*<h4>Album</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReleasedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReleasedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Genere)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Genere)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AlbumPhoto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AlbumPhoto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Artist.ArtistName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Artist.ArtistName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
